@@ -1,3 +1,8 @@
+/* Tamaño de letra base para toda la interfaz (control y pendientes) */
+html {
+  font-size: 25px; /* Súbelo a 19px o 20px si prefieres las letras aún más grandes */
+}
+
 /* Animación de parpadeo suave para entregas de HOY */
 @keyframes blink-border {
     0% { border-color: #ef4444; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
