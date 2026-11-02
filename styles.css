@@ -14,3 +14,10 @@ html {
     animation: blink-border 1.8s infinite ease-in-out;
     border-width: 2px !important;
 }
+@media print {
+    /* Asegura que cualquier imagen en impresión mantenga formato en bloque */
+    img {
+        height: auto !important;
+        page-break-inside: avoid;
+    }
+}
