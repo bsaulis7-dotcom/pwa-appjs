@@ -897,11 +897,13 @@ function descargarReportePDF(trabajo, dataURLFirma = null) {
                 <div class="info-item" style="grid-column: span 2;"><strong>Detalles / Especificaciones:</strong> ${trabajo.detallesExtra || trabajo.detallesAuto || 'N/A'}</div>
             </div>
 
-            <div class="section-title">Descripción del Trabajo Solicitado / Realizado</div>
+<div class="section-title">Descripción del Trabajo Solicitado / Realizado</div>
             <div class="desc-box">
                 ${trabajo.desc || trabajo.descripcion || 'Sin descripciones adicionales.'}
-            </div>
-
+                
+                <!-- AQUÍ AGREGAMOS LA IMAGEN PARA QUE SALGA EN EL PDF -->
+                ${trabajo.image ? `<img src="${trabajo.image}" alt="Evidencia" width="80" style="width: 80px !important; max-width: 80px !important; height: auto !important; border-radius: 4px; display: block; margin-top: 8px;">` : ''}
+                </div>
             <div class="totals-box">
                 <div class="total-row"><span><strong>Costo Total del Servicio:</strong></span> <span>$${total.toFixed(2)} MXN</span></div>
                 <div class="total-row"><span><strong>Anticipo / Depósito:</strong></span> <span>$${anticipo.toFixed(2)} MXN</span></div>
@@ -1003,11 +1005,13 @@ function descargarReporteTerminadoPDF(trabajo, dataURLFirma = null) {
                 <div class="info-item" style="grid-column: span 2;"><strong>Detalles / Especificaciones:</strong> ${trabajo.detallesExtra || trabajo.detallesAuto || 'N/A'}</div>
             </div>
 
-            <div class="section-title">Descripción del Trabajo Ejecutado</div>
+<div class="section-title">Descripción del Trabajo Ejecutado</div>
             <div class="desc-box">
                 ${trabajo.desc || trabajo.descripcion || 'Sin descripciones adicionales.'}
-            </div>
-
+                
+                <!-- Foto adjunta en el Reporte Terminado -->
+               ${trabajo.image ? `<img src="${trabajo.image}" alt="Evidencia" width="80" style="width: 80px !important; max-width: 80px !important; height: auto !important; border-radius: 4px; display: block; margin-top: 8px;">` : ''}
+                </div>
             <div class="totals-box">
                 <div class="total-row"><span><strong>Costo Total del Servicio:</strong></span> <span>$${total.toFixed(2)} MXN</span></div>
                 <div class="total-row"><span><strong>Anticipo Abonado Anteriormente:</strong></span> <span>-$${anticipo.toFixed(2)} MXN</span></div>
